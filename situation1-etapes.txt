@@ -1,0 +1,7 @@
+[SITUATION 1] Ouvrir un projet local … la collaboration via GitHub
+1. git init local, structure Dossier_A/textA.txt
+2. Premier commit local
+3. Creation du repo vide sur GitHub
+4. git remote add origin ...  &&  git push -u origin main
+5. Ajout collaborateur B sur GitHub
+6. B clone depuis l'URL fournie
