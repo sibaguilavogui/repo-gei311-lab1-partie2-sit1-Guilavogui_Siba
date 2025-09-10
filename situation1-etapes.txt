@@ -1,7 +1,47 @@
-[SITUATION 1] Ouvrir un projet local … la collaboration via GitHub
-1. git init local, structure Dossier_A/textA.txt
-2. Premier commit local
-3. Creation du repo vide sur GitHub
-4. git remote add origin ...  &&  git push -u origin main
-5. Ajout collaborateur B sur GitHub
-6. B clone depuis l'URL fournie
+[SITUATION 1] Ouvrir un projet local à la collaboration via GitHub
+---------------------------------------------------------------
+
+1. Membre A crée un dépôt local avec la même structure que la partie 1 :
+   git init
+   mkdir Dossier_A
+   echo "labo 1, gestion de version, Guilavogui Siba" > Dossier_A/textA.txt
+   git add -A
+   git commit -m "Init local: ajout de Dossier_A/textA.txt"
+
+2. Membre A décide d’ajouter le membre B (Elvis) comme collaborateur pour travailler ensemble.
+
+3. Membre A et B décident d’utiliser GitHub pour partager le projet.
+
+4. Membre A crée un dépôt vide sur GitHub nommé :
+   repo-gei311-lab1-partie2-sit1-Guilavogui_Siba
+
+5. Membre A relie son dépôt local au dépôt GitHub :
+   git remote add origin https://github.com/sibaguilavogui/repo-gei311-lab1-partie2-sit1-Guilavogui_Siba.git
+   git branch -M main
+   git push -u origin main
+
+6. Membre A ajoute B comme collaborateur sur GitHub (via Settings ? Collaborators).
+
+7. Membre B clone le dépôt pour commencer à collaborer :
+   git clone https://github.com/sibaguilavogui/repo-gei311-lab1-partie2-sit1-Guilavogui_Siba.git
+
+---------------------------------------------------------------
+Mise à jour du dépôt GitHub (branche main)
+---------------------------------------------------------------
+Lorsque A ou B souhaite mettre à jour le dépôt distant après avoir modifié des fichiers :
+
+- Vérifier que l’on est bien sur la branche main :
+  git status
+
+- Ajouter les fichiers modifiés :
+  git add -A
+
+- Créer un commit local :
+  git commit -m "Description des changements"
+
+- Pousser la mise à jour vers GitHub :
+  git push origin main
+
+En cas de rejet (updates were rejected), mettre à jour avant de pousser :
+  git pull origin main --rebase
+  git push origin main
